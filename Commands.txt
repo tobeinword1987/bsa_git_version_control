@@ -31,3 +31,9 @@ git log master develop --grep 231 --reverse
 
  При изменении сообщений коммитов, происходит изменение их хеш кодов. Поэтому данную операцию не рекомендуют проводить на сервере, так как существует опасность того, что некоторые люди уже могли скачать все обновления с сервера и работать с неправильными коммитами.
 
+
+Чтобы не заметил Team lead:
+git checkout develop-feature3
+git commit --amend -m "your new message1" (или git rebase –interactive b2f1910b9490b8142441268693e7f4d5a938ad19)
+git pull origin develop-feature3
+git push origin develop-feature3
