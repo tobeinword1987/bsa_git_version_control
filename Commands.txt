@@ -1,4 +1,4 @@
-   Работа с историей изменений. Написать команды:
+1."Работа с историей изменений"
 1. которая выводит сообщения и автора всех коммитов из ветки develop-feature1, которые сделаны за последние 3 часа и которых нет в родительских ветках (develop, master). Сортировка по дате, первые более новые.
 
 git log --name-status develop master..develop-feature1 --after="3 hours ago" --reverse
@@ -7,8 +7,16 @@ git log --name-status develop master..develop-feature1 --after="3 hours ago" --r
 
 git log master develop --grep 231 --reverse
 
-2. “Избирательное слияние”. 
+2. "Избирательное слияние"
 Дано: После слияния ветки develop-feature1 в develop, вы продолжили работать в ветке develop-feature1, а develop отдали на тестирование, потом исправили ошибку и закоммитили исправление в develop-feature1, сделали push. Через какое-то время тим лид говорит, что это критический фикс, и надо включить его в develop. Вы делаете pull в ветке develop-feature1 и оказывается, что ваш коллега сделал еще 3 коммита после вашего, и они не стабильные, поэтому не должны быть включены в develop. 
 Задание: как добавить в develop только ваш коммит, но чтобы 3 коммита после него в develop не попали?
+
+ git checkout  develop (переключаемя на ветку develop)
+
+ git log develop-feature1 ( находим хеш код коммита с ветки develop-feature1, который является hotfix)
+
+ git cherry-pick 453b187 ( добавляем необходимый коммит в ветку develop)
+
+ git push origin develop ( заливаем на сервер)
 
 
