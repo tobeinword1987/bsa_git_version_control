@@ -35,5 +35,5 @@ git log master develop --grep 231 --reverse
 Чтобы не заметил Team lead:
 git checkout develop-feature3
 git commit --amend -m "your new message1" (или git rebase –interactive b2f1910b9490b8142441268693e7f4d5a938ad19)
-git pull origin develop-feature3
-git push origin develop-feature3
+git pull origin develop-feature3 (если не делаем force)
+git push origin develop-feature3 -f (тогда все перезатрет в репозитории)
